@@ -1,8 +1,5 @@
 package CodeWars;
 
-import java.util.ArrayList;
-import java.util.List;
-
     /*Encrypt this!
 
     You want to create secret messages which can be deciphered by the Decipher this! kata. Here are the conditions:
@@ -27,11 +24,11 @@ public class Encryption {
         for (int i = 0; i < chars.length; i++) {
 
             if (i == 0) {
-                sb.append((int) chars[i]);
+                sb.append((int) chars[i]); // converts char to ascii code value
             } else if (i == 1) {
-                sb.append(chars[chars.length - 1]);
+                sb.append(chars[chars.length - 1]); //puts last char on second place
             } else if (i == chars.length - 1) {
-                sb.append(chars[1]);
+                sb.append(chars[1]);                // puts second char on last place
             } else {
                 sb.append(chars[i]);
             }
@@ -49,18 +46,17 @@ public class Encryption {
 
         String[] newString = str.split("\\s");
 
-        List<String> newList = new ArrayList<>();
 
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < newString.length; i++) {
 
-            sb.append(letterSwap(newString[i])).append(" ");
+            sb.append(letterSwap(newString[i])).append(" "); //calls a function to encrypt words
 
         }
 
 
-        return sb.toString().trim();
+        return sb.toString().trim(); //removes last space added
     }
 
     public static void main(String[] args) {
